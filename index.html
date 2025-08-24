@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>你的名字 · 个人主页</title>
+  <meta name="description" content="个人简介、项目与联系方式" />
+  <meta property="og:title" content="你的名字 · 个人主页" />
+  <meta property="og:description" content="个人简介、项目与联系方式" />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{--bg:#ffffff;--fg:#111827;--muted:#6b7280;--card:#f3f4f6;--accent:#2563eb}
+    @media (prefers-color-scheme: dark){
+      :root{--bg:#0b1220;--fg:#e5e7eb;--muted:#9ca3af;--card:#111827}
+    }
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    .container{max-width:920px;margin:0 auto;padding:28px 20px}
+    header{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .title{font-size:28px;font-weight:800;letter-spacing:.2px}
+    nav a{margin-right:14px;text-decoration:none;color:var(--muted)} nav a:hover{color:var(--fg)}
+    .hero{margin:28px 0 8px}
+    .hero h1{font-size:36px;line-height:1.2;margin:.2em 0}
+    .hero p{color:var(--muted);max-width:60ch}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:18px 0 8px}
+    .card{background:var(--card);border-radius:16px;padding:16px;border:1px solid rgba(0,0,0,.04)}
+    .card h3{margin:.2em 0 .4em;font-size:18px}
+    .tag{display:inline-block;padding:2px 8px;border-radius:999px;background:rgba(37,99,235,.12);color:var(--accent);font-size:12px;margin-right:6px}
+    footer{margin:24px 0;color:var(--muted)}
+    .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:12px;text-decoration:none}
+    .list{padding-left:18px}
+    .list li{margin:4px 0}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title">你的名字</div>
+      <nav>
+        <a href="#about">关于</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="about">
+      <h1>Hi，我是<span style="color:var(--accent)">你的名字</span>。</h1>
+      <p>一两句话介绍你：专业/方向、目前在做什么、兴趣关键词（例如：计算机视觉 · 多模态 · 开源）。</p>
+      <p>
+        <a class="btn" href="mailto:you@example.com">给我发邮件</a>
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>项目与论文</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">CV</span>
+          <h3>项目 A</h3>
+          <p>一句话描述。<a href="#">GitHub</a> · <a href="#">Demo</a></p>
+        </article>
+        <article class="card">
+          <span class="tag">NLP</span>
+          <h3>项目 B</h3>
+          <p>一句话描述。<a href="#">论文</a> · <a href="#">代码</a></p>
+        </article>
+        <article class="card">
+          <span class="tag">Tool</span>
+          <h3>开源小工具</h3>
+          <p>一句话描述。<a href="#">仓库</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>联系我</h2>
+      <ul class="list">
+        <li>邮箱：<a href="mailto:you@example.com">you@example.com</a></li>
+        <li>GitHub：<a href="https://github.com/yourid">yourid</a></li>
+        <li>领英 / 主页 / 博客：<a href="#">链接</a></li>
+      </ul>
+      <p style="color:var(--muted)">© <span id="year"></span> 你的名字</p>
+    </section>
+
+    <footer>
+      本站托管于 GitHub Pages。想用自定义域名？见下方「进阶」。
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
